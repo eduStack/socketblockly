@@ -5,9 +5,10 @@
 	<title>Socket Blockly</title>
 	<link rel="stylesheet" href="main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	    <script src="/socket.io/socket.io.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
+	<!--<div class="alert alert-success" id="alert" role="alert">...</div>-->
 
 	<div id="wrapper">
 		<div id="blocklyDiv"></div>
@@ -18,9 +19,8 @@
 			<button onclick="runCode()" id="calistir" class="btn btn-success">Çalıştır</button>
 		</div>
 		<br/>
-
-		<span>Kullanıcılar:</span><span id="snc"></span>
-
+		<hr/>
+		<span class="label label-info">Kullanıcılar:</span><span class="label label-info" id="snc"></span>
 	</div>
 
 	<xml id="toolbox" style="display: none">
@@ -397,7 +397,6 @@
 </body>
 </html>
 
-
 <script>
   var socket = io();
 var clients_in_the_room = io.sockets.adapter.rooms[roomId].sockets
@@ -414,8 +413,10 @@ function runCode() {
 		 var code = Blockly.JavaScript.workspaceToCode(workspace);
 		 Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
 		 try {
+			 alert(code);
 			 eval(code);
-			 //document.getElementById("snc").innerHTML = code;
+			 document.getElementById("alert").innerHTML = code;
+
 		 } catch (e) {
 			 alert(e);
 		 }
