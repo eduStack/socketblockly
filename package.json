@@ -1,0 +1,21 @@
+{
+  "name": "socket-blockly",
+  "version": "1.0.0",
+  "description": "Realtime Blockly with socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify public/main.js > public/app.js",
+    "serve": "node index",
+    "start": "npm run build && npm run serve"
+  },
+  "author": "David Daza <03dazal@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^14.1.0",
+    "express": "^4.14.1",
+    "jquery": "^3.1.1",
+    "socket.io": "^1.7.3",
+    "socket.io-client": "^1.7.3"
+  }
+}
