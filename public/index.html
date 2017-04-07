@@ -24,8 +24,7 @@
 	</div>
 
 	<xml id="toolbox" style="display: none">
-	    <category name="Mantıksal" colour="210">
-	      <category name="Eğer">
+	    <category name="Mantık" colour="210">
 	        <block type="controls_if"></block>
 	        <block type="controls_if">
 	          <mutation else="1"></mutation>
@@ -33,17 +32,55 @@
 	        <block type="controls_if">
 	          <mutation elseif="1" else="1"></mutation>
 	        </block>
-	      </category>
-	      <category name="Boolean" colour="120">
-	        <block type="logic_compare"></block>
-	        <block type="logic_operation"></block>
-	        <block type="logic_negate"></block>
-	        <block type="logic_boolean"></block>
-	        <block type="logic_null"></block>
-	        <block type="logic_ternary"></block>
-	      </category>
-				<category name="Text">
-
+					<block type="logic_compare"></block>
+					<block type="logic_operation"></block>
+					<block type="logic_negate"></block>
+					<block type="logic_boolean"></block>
+					<block type="logic_null"></block>
+					<block type="logic_ternary"></block>
+			</category>
+				<category name="Metin"  colour="170">
+					<block type="text_print"></block>
+					<block type="text"></block>
+	 <block type="text_join"></block>
+	 <block type="text_append">
+		 <value name="TEXT">
+			 <shadow type="text"></shadow>
+		 </value>
+	 </block>
+	 <block type="text_length">
+		 <value name="VALUE">
+			 <shadow type="text">
+				 <field name="TEXT">abc</field>
+			 </shadow>
+		 </value>
+	 </block>
+	 <block type="text_isEmpty">
+		 <value name="VALUE">
+			 <shadow type="text">
+				 <field name="TEXT"></field>
+			 </shadow>
+		 </value>
+	 </block>
+	 <block type="text_indexOf">
+		 <value name="VALUE">
+			 <block type="variables_get">
+				 <field name="VAR">{textVariable}</field>
+			 </block>
+		 </value>
+		 <value name="FIND">
+			 <shadow type="text">
+				 <field name="TEXT">abc</field>
+			 </shadow>
+		 </value>
+	 </block>
+	 <block type="text_charAt">
+		 <value name="VALUE">
+			 <block type="variables_get">
+				 <field name="VAR">{textVariable}</field>
+			 </block>
+		 </value>
+	 </block>
 			 </category>
 	    </category>
 	    <category name="Döngüler" colour="230">
@@ -129,7 +166,7 @@
 	      <block type="lists_setIndex"></block>
 	    </category>
 	    <category name="Değişkenler" custom="VARIABLE" colour="290"></category>
-	    <category name="Fonksiyonlar" custom="PROCEDURE" colour="310"></category>
+	    <category name="İşlevler" custom="PROCEDURE" colour="310"></category>
 	    <sep></sep>
 	    <category name="Kütüphane" expanded="true">
 	      <category name="Rastgele">
@@ -259,35 +296,50 @@
 	          </statement>
 	        </block>
 	      </category>
-	      <category name="Jabberwocky">
+	      <category name="Şiir">
 	        <block type="text_print">
 	          <value name="TEXT">
 	            <block type="text">
-	              <field name="TEXT">'Twas brillig, and the slithy toves</field>
+	              <field name="TEXT">Mini mini bir kuş donmuştu</field>
 	            </block>
 	          </value>
 	          <next>
 	            <block type="text_print">
 	              <value name="TEXT">
 	                <block type="text">
-	                  <field name="TEXT">  Did gyre and gimble in the wabe:</field>
+	                  <field name="TEXT">Pencereme konmuştu</field>
 	                </block>
 	              </value>
 	              <next>
 	                <block type="text_print">
 	                  <value name="TEXT">
 	                    <block type="text">
-	                      <field name="TEXT">All mimsy were the borogroves,</field>
+	                      <field name="TEXT">Aldım onu içeriye</field>
 	                    </block>
 	                  </value>
 	                  <next>
 	                    <block type="text_print">
 	                      <value name="TEXT">
 	                        <block type="text">
-	                          <field name="TEXT">  And the mome raths outgrabe.</field>
+	                          <field name="TEXT">  Cik cik cik cik ötsün diye</field>
 	                        </block>
 	                      </value>
 	                    </block>
+											<next>
+											<block type="text_print">
+												<value name="TEXT">
+													<block type="text">
+														<field name="TEXT">Pırpır ederken canlandı</field>
+													</block>
+												</value>
+											</block>
+											<next>
+											<block type="text_print">
+												<value name="TEXT">
+													<block type="text">
+														<field name="TEXT">  Ellerim bak boş kaldı</field>
+													</block>
+												</value>
 	                  </next>
 	                </block>
 	              </next>
