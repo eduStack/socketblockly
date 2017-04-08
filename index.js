@@ -14,6 +14,8 @@ io.on('connection', (socket) => {
   console.log(`User ${socket.id} connected`)
   //console.log(io.sockets.server.eio.clientsCount);
   io.sockets.emit('users_count', io.sockets.server.eio.clientsCount);
+
+  //Workspace'i yeniden oluştur
   socket.on('new xml', (xml) => {
     socket.broadcast.emit('rebuild workspace', xml)
   })
