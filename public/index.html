@@ -369,12 +369,11 @@
 	//KULLANICI SAYISINI AL
 	var clients_in_the_room = io.sockets.adapter.rooms[roomId].sockets
 	for (var clientId in clients_in_the_room ) {
-  	console.log('client: %s', clientId); //Seeing is believing
-  	var client_socket = io.sockets.connected[clientId];//Do whatever you want with this
+  	console.log('client: %s', clientId); 
+  	var client_socket = io.sockets.connected[clientId];
 }
 //BLOK KODLARI ÇALIŞTIR
 function runCode() {
-		 // Generate JavaScript code and run it.
 		 var workspace = document.getElementById("#blockyDiv");
 		 window.LoopTrap = 1000;
 		 Blockly.JavaScript.INFINITE_LOOP_TRAP =
